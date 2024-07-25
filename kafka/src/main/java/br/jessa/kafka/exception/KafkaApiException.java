@@ -14,7 +14,7 @@ public class KafkaApiException extends RuntimeException {
 		verifyObjectNull(b);
 		if (b instanceof RecordPack)
 			return;
-		
+
 		StringBuilder msg = new StringBuilder();
 		msg.append(b.getClass().getName());
 		msg.append(">Objeto não é uma instancia de:");
@@ -30,16 +30,17 @@ public class KafkaApiException extends RuntimeException {
 	}
 
 	public static void print(String string, Exception e) {
-		throw new KafkaApiException("Houve um erro:"+string+" - "+e.getStackTrace());
+		throw new KafkaApiException("Houve um erro:" + string + " - " + e.getStackTrace());
 	}
 
 	public static void exceptionJava(Exception e) {
-		throw new KafkaApiException("Houve um erro:"+e.getMessage());
+		throw new KafkaApiException("Houve um erro:" + e.getMessage());
 	}
 
-	public static void noReturnFound() {
-		throw new KafkaApiException("Execução não retornou resultado válid");
+	public static KafkaApiException noReturnFound() {
+		return new KafkaApiException("Execução não retornou resultado válid");
 	}
+
 	
 
 }

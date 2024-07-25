@@ -1,6 +1,6 @@
 package br.jessa.kafka.topic;
 
-public enum EnumB {
+public enum EnumB implements TestWrongInterfaceEnum {
 	test;
 	
 

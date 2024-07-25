@@ -12,6 +12,8 @@ public class FactoryProducer {
 	
 	private FactoryProducer(String name) {
 		producer = new Producer(name);
+		
+		
 	}
 	
 	public static FactoryProducer newInstance(String name) {
@@ -34,7 +36,7 @@ public class FactoryProducer {
 	
 	
 	@SuppressWarnings("rawtypes")
-	public void send(ProducerRecord<String, RecordPack> message) {
+	public  void  send(ProducerRecord<String, RecordPack> message) {
 		producer.initTransactions();
 		producer.beginTransaction();
 		try {
