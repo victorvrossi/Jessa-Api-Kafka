@@ -1,2 +1,2 @@
-# Jessa Api Kafka
- Kafka API
+# Jessa Kafka
+API para integração com Kafka
