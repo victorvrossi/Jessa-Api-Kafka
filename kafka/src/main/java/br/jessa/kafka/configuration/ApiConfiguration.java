@@ -8,8 +8,13 @@ import org.springframework.core.env.Environment;
 
 public class ApiConfiguration {
 
-	public final static Properties kafkaApi = new Properties();
+	private static final Properties kafkaApi = new Properties();
+
 	protected static final Logger log = LogManager.getLogger();
+
+	public static Properties kafkaApi() {
+		return kafkaApi;
+	}
 
 	public synchronized void loadProperties(Environment environment) {
 		ApiProperties[] values = ApiProperties.values();
@@ -21,7 +26,7 @@ public class ApiConfiguration {
 	}
 
 	private Object verifyRequiredProperties(ApiProperties key, Environment environment) {
-		if (key.isRequired())
+		if (Boolean.TRUE.equals(key.isRequired()))
 			return environment.getRequiredProperty(key.getProperties());
 		return environment.getProperty(key.getProperties());
 	}

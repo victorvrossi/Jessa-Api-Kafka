@@ -1,4 +1,4 @@
-package br.jessa.kafka;
+package br.jessa.kafka.generic;
 
 import br.jessa.kafka.topic.ModelEnumTopic;
 

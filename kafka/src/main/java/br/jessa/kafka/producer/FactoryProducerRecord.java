@@ -7,14 +7,12 @@ import br.jessa.kafka.message.RecordPack;
 import br.jessa.kafka.topic.ModelEnumTopic;
 
 public class FactoryProducerRecord {
-
-	
-	@SuppressWarnings("rawtypes")
-	public static <P extends ModelEnumTopic,T extends EntityModel> ProducerRecord<String, RecordPack> recordSet(P topic,T val) {
-
-		RecordPack<T> p = new RecordPack<T>();
+	public static 
+	<P extends ModelEnumTopic,T extends EntityModel> ProducerRecord<String,RecordPack<T>> 
+	recordSet(P topic,T val) {
+		RecordPack<T> p = new RecordPack<>();
 		p.setEntity(val);
-		return new ProducerRecord<String, RecordPack>(topic.getTopicName(), p);
+		return new ProducerRecord<>(topic.getTopicName(), p);
 	}
 
 }

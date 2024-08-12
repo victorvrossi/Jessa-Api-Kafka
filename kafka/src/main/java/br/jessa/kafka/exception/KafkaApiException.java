@@ -33,7 +33,7 @@ public class KafkaApiException extends RuntimeException {
 		throw new KafkaApiException("Houve um erro:" + string + " - " + e.getStackTrace());
 	}
 
-	public static void exceptionJava(Exception e) {
+	public static void exceptionJava(Throwable e) {
 		throw new KafkaApiException("Houve um erro:" + e.getMessage());
 	}
 

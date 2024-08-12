@@ -18,11 +18,6 @@ public class RecordPack<ET extends EntityModel> implements Serializable {
 		this.entity = entity;
 		return this;
 	}
-
-	public static <ERT extends EntityModel> RecordPack<ERT> create() {
-		return new RecordPack<ERT>();
-	}
-
 	
 	public RecordPack<ET> setTopic(String topic) {
 		return this;

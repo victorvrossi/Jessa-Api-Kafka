@@ -4,7 +4,7 @@ import br.jessa.kafka.exception.KafkaApiException;
 
 public abstract class ExceptionHandling<T> {
 
-	public abstract void action() throws Exception;
+	public abstract void action() throws Throwable;
 
 	private T object;
 
@@ -12,7 +12,7 @@ public abstract class ExceptionHandling<T> {
 
 		try {
 			action();
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			if (Boolean.TRUE.equals(outException))
 				lanca(e);
 		}
@@ -27,7 +27,7 @@ public abstract class ExceptionHandling<T> {
 		this.object = object;
 	}
 
-	private void lanca(Exception e) {
+	private void lanca(Throwable e) {
 		KafkaApiException.exceptionJava(e);
 	}
 	

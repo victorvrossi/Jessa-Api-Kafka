@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import br.jessa.kafka.KafkaApiValidation;
 import br.jessa.kafka.exception.KafkaApiException;
+import br.jessa.kafka.generic.KafkaApiValidation;
 
 public final class JessaTopic {
 
